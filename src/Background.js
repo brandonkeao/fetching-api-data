@@ -9,14 +9,14 @@ class Background extends Component {
   }
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=500')
+    fetch('https://randomuser.me/api/?results=20')
     .then(results => {
       return results.json();
     }).then(data => {
       let pictures = data.results.map((pic) => {
         return(
           <div key={pic.results}>
-            <img src={pic.picture.medium}/>
+            <img src={pic.picture.large}/>
           </div>
         )
       })
